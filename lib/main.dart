@@ -23,6 +23,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.blue[100],
         body: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -41,23 +42,25 @@ class _MyAppState extends State<MyApp> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 50),
               child: SizedBox(
-                width: 150,
+                width: 200,
                 child: TextField(
                   controller: _cityNameController,
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
                     labelText: 'City name',
                   ),
                 ),
               ),
             ),
-            ElevatedButton(
-              onPressed: _search,
-              style: ElevatedButton.styleFrom(
+            SizedBox(
+              width: 200.0,
+              height: 50.0,
+              child: ElevatedButton(
+                onPressed: _search,
+                style: ElevatedButton.styleFrom(
                   primary: Colors.pink,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50))),
-              child: const Text('Search'),
+                ),
+                child: const Text('Search'),
+              ),
             ),
           ],
         )),

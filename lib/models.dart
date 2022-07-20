@@ -1,25 +1,3 @@
-/* 
-{
-  "weather": [
-    {
-      "description": "clear sky",
-      "icon": "01d"
-    }
-  ],
-  "main": {
-    "temp": 282.55,
-    "feels_like": 281.86,
-    "pressure": 1023,
-    "humidity": 100
-  },
-  "wind": {
-    "speed": 1.5,
-    "deg": 350
-  },
-  "name": "Mountain View",
-  }     
-*/
-
 class WeatherInfo {
   final String description;
   final String icon;
@@ -35,6 +13,7 @@ class WeatherInfo {
 
 class TemperatureInfo {
   final double temperature;
+
   TemperatureInfo({this.temperature});
 
   factory TemperatureInfo.fromJson(Map<String, dynamic> json) {
