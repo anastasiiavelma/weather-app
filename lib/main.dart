@@ -23,47 +23,58 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blue[100],
-        body: Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (_response != null)
-              Column(
-                children: [
-                  Image.network(_response.iconUrl),
-                  Text(
-                    '${_response.tempInfo.temperature}°',
-                    style: TextStyle(fontSize: 40),
-                  ),
-                  Text(_response.weatherInfo.description)
-                ],
-              ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 50),
-              child: SizedBox(
-                width: 200,
-                child: TextField(
-                  controller: _cityNameController,
-                  decoration: const InputDecoration(
-                    labelText: 'City name',
+        body: Container(
+          constraints: const BoxConstraints.expand(),
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/this.jpg"),
+                  fit: BoxFit.cover)),
+          child: Center(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (_response != null)
+                Column(
+                  children: [
+                    Image.network(_response.iconUrl),
+                    Text(
+                      '${_response.tempInfo.temperature}°',
+                      style: TextStyle(fontSize: 40),
+                    ),
+                    Text(_response.weatherInfo.description),
+                    const SizedBox(width: 200, child: Divider()),
+                    Text(
+                      'feels like ${_response.feelInfo.feelLike}°',
+                      style: const TextStyle(fontSize: 13),
+                    ),
+                  ],
+                ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 50),
+                child: SizedBox(
+                  width: 200,
+                  child: TextField(
+                    controller: _cityNameController,
+                    decoration: const InputDecoration(
+                      labelText: 'City name',
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              width: 200.0,
-              height: 50.0,
-              child: ElevatedButton(
-                onPressed: _search,
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.pink,
+              SizedBox(
+                width: 200.0,
+                height: 50.0,
+                child: ElevatedButton(
+                  onPressed: _search,
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.pink,
+                  ),
+                  child: const Text('Search'),
                 ),
-                child: const Text('Search'),
               ),
-            ),
-          ],
-        )),
+            ],
+          )),
+        ),
       ),
     );
   }
