@@ -15,5 +15,5 @@ Flutter project where people can find out about the current weather
 ## Flutter Weather App Preview
 
 Flutter weather app using the [OpenWeatherMap API](https://openweathermap.org/api)
-### Main screen
+#### Main screen
 <img src="assets/images/screen.png?raw=true" alt="Flutter Weather App Preview" width=50% height=50%>
