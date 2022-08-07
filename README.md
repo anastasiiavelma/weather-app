@@ -8,6 +8,12 @@ Flutter project where people can find out about the current weather
 - Search by city
 - weather description with icons
 
-## Dowload
-Scan this QR-code
-![frame](https://user-images.githubusercontent.com/103375322/183306473-4a2b2043-7102-464f-a45b-81220e593233.png)
+## Packages in use
+- http for talking to the REST API
+- flutter_launcher_icons for launcher icon
+
+## Flutter Weather App Preview
+
+Flutter weather app using the [OpenWeatherMap API](https://openweathermap.org/api)
+### Main screen
+<img src="assets/images/screen.png?raw=true" alt="Flutter Weather App Preview" width=50% height=50%>
